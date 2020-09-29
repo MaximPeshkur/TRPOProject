@@ -23,31 +23,27 @@ namespace TRPOProject
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            pictureBox1.Image = Properties.Resources.user_blue;
-            panel1.BackColor = Color.FromArgb(78, 184, 206);
-            textBox1.ForeColor = Color.FromArgb(78, 184, 206);
+            textBoxUsername.Clear();
+            pictureBoxUsername.Image = Properties.Resources.user_blue;
+            panelUsername.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxUsername.ForeColor = Color.FromArgb(78, 184, 206);
 
-            pictureBox2.Image = Properties.Resources.lock_white;
-            panel2.BackColor = Color.White;
-            textBox2.ForeColor = Color.White;
+            pictureBoxPassword.Image = Properties.Resources.lock_white;
+            panelPassword.BackColor = Color.White;
+            textBoxPassword.ForeColor = Color.White;
         }
 
         private void textBox2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "";
-            pictureBox2.Image = Properties.Resources.lock_blue;
-            panel2.BackColor = Color.FromArgb(78, 184, 206);
-            textBox2.ForeColor = Color.FromArgb(78, 184, 206);
+            textBoxPassword.Text = "";
+            textBoxPassword.UseSystemPasswordChar = true;
+            pictureBoxPassword.Image = Properties.Resources.lock_blue;
+            panelPassword.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxPassword.ForeColor = Color.FromArgb(78, 184, 206);
 
-            pictureBox1.Image = Properties.Resources.user_white;
-            panel1.BackColor = Color.White;
-            textBox1.ForeColor = Color.White;
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            textBox2.PasswordChar = '•';
+            pictureBoxUsername.Image = Properties.Resources.user_white;
+            panelUsername.BackColor = Color.White;
+            textBoxUsername.ForeColor = Color.White;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -79,29 +75,31 @@ namespace TRPOProject
 
         private void label3_MouseMove(object sender, MouseEventArgs e)
         {
-            label3.BackColor = Color.Red;
+            labelExit.BackColor = Color.Red;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            label3.BackColor = Color.FromArgb(34, 36, 49);
+            labelExit.BackColor = Color.FromArgb(34, 36, 49);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.user_blue;
-            panel1.BackColor = Color.FromArgb(78, 184, 206);
-            textBox1.ForeColor = Color.FromArgb(78, 184, 206);
+            pictureBoxUsername.Image = Properties.Resources.user_blue;
+            panelUsername.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxUsername.ForeColor = Color.FromArgb(78, 184, 206);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             DB = new SQLiteConnection("Data Source = DataBase.db; Version = 3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "select * from Users where Login like '%' || @login || '%' and Password like '%' || @password || '%'";
-            CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBox1.Text;
-            CMD.Parameters.Add("@password", System.Data.DbType.String).Value = textBox2.Text;
+            CMD.CommandText = "select * from Users where Login = @login and Password = @password";
+            CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
+            CMD.Parameters.Add("@password", System.Data.DbType.String).Value = textBoxPassword.Text;
             SQLiteDataReader SQL = CMD.ExecuteReader();
 
             if (SQL.HasRows)
@@ -110,11 +108,24 @@ namespace TRPOProject
             }
             else
             {
-                MessageBox.Show("Ошибка при входе");
+                MessageBox.Show("Неверный логин или пароль");
             }
-
+           
             DB.Close();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (textBoxPassword.UseSystemPasswordChar)
+            {
+                pictureBoxVisible.Image = Properties.Resources.visible_blue;
+                textBoxPassword.UseSystemPasswordChar = false; 
+            }
+            else
+            {
+                pictureBoxVisible.Image = Properties.Resources.visible_white;
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

@@ -28,217 +28,229 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelPassword = new System.Windows.Forms.Panel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.panelUsername = new System.Windows.Forms.Panel();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.buttonRegisration = new System.Windows.Forms.Button();
+            this.labelHeader = new System.Windows.Forms.Label();
+            this.labelHasAcc = new System.Windows.Forms.Label();
+            this.panelSurname = new System.Windows.Forms.Panel();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
+            this.panelName = new System.Windows.Forms.Panel();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.labelExit = new System.Windows.Forms.Label();
+            this.textBoxHiddenSurname = new System.Windows.Forms.TextBox();
+            this.textBoxHiddenName = new System.Windows.Forms.TextBox();
+            this.pictureBoxPassword = new System.Windows.Forms.PictureBox();
+            this.pictureBoxUsername = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVisible = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVisible)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // panelPassword
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(57, 198);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(286, 1);
-            this.panel2.TabIndex = 12;
+            this.panelPassword.BackColor = System.Drawing.Color.White;
+            this.panelPassword.ForeColor = System.Drawing.Color.White;
+            this.panelPassword.Location = new System.Drawing.Point(69, 198);
+            this.panelPassword.Name = "panelPassword";
+            this.panelPassword.Size = new System.Drawing.Size(286, 1);
+            this.panelPassword.TabIndex = 12;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(87, 172);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(256, 18);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.Text = "Password";
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword.ForeColor = System.Drawing.Color.White;
+            this.textBoxPassword.Location = new System.Drawing.Point(99, 172);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(234, 18);
+            this.textBoxPassword.TabIndex = 11;
+            this.textBoxPassword.Text = "Password";
+            this.textBoxPassword.Click += new System.EventHandler(this.textBox2_Click);
             // 
-            // pictureBox2
+            // panelUsername
             // 
-            this.pictureBox2.Image = global::TRPOProject.Properties.Resources.lock_white;
-            this.pictureBox2.Location = new System.Drawing.Point(57, 166);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.panelUsername.BackColor = System.Drawing.Color.White;
+            this.panelUsername.ForeColor = System.Drawing.Color.White;
+            this.panelUsername.Location = new System.Drawing.Point(69, 131);
+            this.panelUsername.Name = "panelUsername";
+            this.panelUsername.Size = new System.Drawing.Size(286, 1);
+            this.panelUsername.TabIndex = 9;
             // 
-            // panel1
+            // textBoxUsername
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(57, 131);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 1);
-            this.panel1.TabIndex = 9;
+            this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsername.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxUsername.ForeColor = System.Drawing.Color.White;
+            this.textBoxUsername.Location = new System.Drawing.Point(99, 105);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(256, 18);
+            this.textBoxUsername.TabIndex = 8;
+            this.textBoxUsername.Text = "Username";
+            this.textBoxUsername.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBoxUsername.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox1
+            // buttonRegisration
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(87, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 18);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Username";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.buttonRegisration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonRegisration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegisration.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegisration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonRegisration.Location = new System.Drawing.Point(69, 368);
+            this.buttonRegisration.Name = "buttonRegisration";
+            this.buttonRegisration.Size = new System.Drawing.Size(286, 45);
+            this.buttonRegisration.TabIndex = 13;
+            this.buttonRegisration.Text = "Зарегистрироваться";
+            this.buttonRegisration.UseVisualStyleBackColor = false;
+            this.buttonRegisration.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
+            // labelHeader
             // 
-            this.pictureBox1.Image = global::TRPOProject.Properties.Resources.user_white;
-            this.pictureBox1.Location = new System.Drawing.Point(57, 99);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHeader.ForeColor = System.Drawing.Color.White;
+            this.labelHeader.Location = new System.Drawing.Point(80, 26);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(235, 42);
+            this.labelHeader.TabIndex = 14;
+            this.labelHeader.Text = "Регистрация";
             // 
-            // button1
+            // labelHasAcc
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button1.Location = new System.Drawing.Point(57, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(286, 45);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Зарегистрироваться";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.labelHasAcc.AutoSize = true;
+            this.labelHasAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.labelHasAcc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHasAcc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.labelHasAcc.Location = new System.Drawing.Point(153, 426);
+            this.labelHasAcc.Name = "labelHasAcc";
+            this.labelHasAcc.Size = new System.Drawing.Size(112, 15);
+            this.labelHasAcc.TabIndex = 15;
+            this.labelHasAcc.Text = "Уже есть аккаунт?";
+            this.labelHasAcc.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
+            // panelSurname
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(80, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 42);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Регистрация";
+            this.panelSurname.BackColor = System.Drawing.Color.White;
+            this.panelSurname.ForeColor = System.Drawing.Color.White;
+            this.panelSurname.Location = new System.Drawing.Point(69, 327);
+            this.panelSurname.Name = "panelSurname";
+            this.panelSurname.Size = new System.Drawing.Size(286, 1);
+            this.panelSurname.TabIndex = 21;
             // 
-            // label2
+            // textBoxSurname
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.label2.Location = new System.Drawing.Point(141, 426);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Уже есть аккаунт?";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.textBoxSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSurname.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSurname.ForeColor = System.Drawing.Color.White;
+            this.textBoxSurname.Location = new System.Drawing.Point(71, 303);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(284, 18);
+            this.textBoxSurname.TabIndex = 20;
+            this.textBoxSurname.Text = "Surname";
+            this.textBoxSurname.Click += new System.EventHandler(this.textBox3_Click);
             // 
-            // panel3
+            // panelName
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(57, 327);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(286, 1);
-            this.panel3.TabIndex = 21;
+            this.panelName.BackColor = System.Drawing.Color.White;
+            this.panelName.ForeColor = System.Drawing.Color.White;
+            this.panelName.Location = new System.Drawing.Point(69, 260);
+            this.panelName.Name = "panelName";
+            this.panelName.Size = new System.Drawing.Size(286, 1);
+            this.panelName.TabIndex = 18;
             // 
-            // textBox3
+            // textBoxName
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(59, 303);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(284, 18);
-            this.textBox3.TabIndex = 20;
-            this.textBox3.Text = "Surname";
-            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxName.ForeColor = System.Drawing.Color.White;
+            this.textBoxName.Location = new System.Drawing.Point(71, 236);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(284, 18);
+            this.textBoxName.TabIndex = 17;
+            this.textBoxName.Text = "Name";
+            this.textBoxName.Click += new System.EventHandler(this.textBox4_Click);
             // 
-            // panel4
+            // labelExit
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(57, 260);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(286, 1);
-            this.panel4.TabIndex = 18;
+            this.labelExit.AutoSize = true;
+            this.labelExit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelExit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.labelExit.Location = new System.Drawing.Point(401, 3);
+            this.labelExit.Name = "labelExit";
+            this.labelExit.Size = new System.Drawing.Size(17, 16);
+            this.labelExit.TabIndex = 22;
+            this.labelExit.Text = "X";
+            this.labelExit.Click += new System.EventHandler(this.label3_Click);
+            this.labelExit.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
+            this.labelExit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label3_MouseMove);
             // 
-            // textBox4
+            // textBoxHiddenSurname
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(59, 236);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(284, 18);
-            this.textBox4.TabIndex = 17;
-            this.textBox4.Text = "Name";
-            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
+            this.textBoxHiddenSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxHiddenSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxHiddenSurname.Enabled = false;
+            this.textBoxHiddenSurname.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxHiddenSurname.ForeColor = System.Drawing.Color.White;
+            this.textBoxHiddenSurname.Location = new System.Drawing.Point(1, 279);
+            this.textBoxHiddenSurname.Name = "textBoxHiddenSurname";
+            this.textBoxHiddenSurname.ReadOnly = true;
+            this.textBoxHiddenSurname.Size = new System.Drawing.Size(68, 18);
+            this.textBoxHiddenSurname.TabIndex = 23;
+            this.textBoxHiddenSurname.Text = "Surname:";
+            this.textBoxHiddenSurname.Visible = false;
             // 
-            // label3
+            // textBoxHiddenName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(401, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "X";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
-            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label3_MouseMove);
+            this.textBoxHiddenName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxHiddenName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxHiddenName.Enabled = false;
+            this.textBoxHiddenName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxHiddenName.ForeColor = System.Drawing.Color.White;
+            this.textBoxHiddenName.Location = new System.Drawing.Point(1, 221);
+            this.textBoxHiddenName.Name = "textBoxHiddenName";
+            this.textBoxHiddenName.ReadOnly = true;
+            this.textBoxHiddenName.Size = new System.Drawing.Size(49, 18);
+            this.textBoxHiddenName.TabIndex = 24;
+            this.textBoxHiddenName.Text = "Name:";
+            this.textBoxHiddenName.Visible = false;
             // 
-            // textBox5
+            // pictureBoxPassword
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(1, 279);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(68, 18);
-            this.textBox5.TabIndex = 23;
-            this.textBox5.Text = "Surname:";
-            this.textBox5.Visible = false;
+            this.pictureBoxPassword.Image = global::TRPOProject.Properties.Resources.lock_white;
+            this.pictureBoxPassword.Location = new System.Drawing.Point(69, 166);
+            this.pictureBoxPassword.Name = "pictureBoxPassword";
+            this.pictureBoxPassword.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPassword.TabIndex = 10;
+            this.pictureBoxPassword.TabStop = false;
             // 
-            // textBox6
+            // pictureBoxUsername
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(1, 221);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(49, 18);
-            this.textBox6.TabIndex = 24;
-            this.textBox6.Text = "Name:";
-            this.textBox6.Visible = false;
+            this.pictureBoxUsername.Image = global::TRPOProject.Properties.Resources.user_white;
+            this.pictureBoxUsername.Location = new System.Drawing.Point(69, 99);
+            this.pictureBoxUsername.Name = "pictureBoxUsername";
+            this.pictureBoxUsername.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUsername.TabIndex = 7;
+            this.pictureBoxUsername.TabStop = false;
+            // 
+            // pictureBoxVisible
+            // 
+            this.pictureBoxVisible.Image = global::TRPOProject.Properties.Resources.visible_white;
+            this.pictureBoxVisible.Location = new System.Drawing.Point(331, 173);
+            this.pictureBoxVisible.Name = "pictureBoxVisible";
+            this.pictureBoxVisible.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxVisible.TabIndex = 25;
+            this.pictureBoxVisible.TabStop = false;
+            this.pictureBoxVisible.Click += new System.EventHandler(this.pictureBoxVisible_Click);
             // 
             // RegistredForm
             // 
@@ -246,30 +258,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(420, 450);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxVisible);
+            this.Controls.Add(this.textBoxHiddenName);
+            this.Controls.Add(this.textBoxHiddenSurname);
+            this.Controls.Add(this.labelExit);
+            this.Controls.Add(this.panelSurname);
+            this.Controls.Add(this.textBoxSurname);
+            this.Controls.Add(this.panelName);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.labelHasAcc);
+            this.Controls.Add(this.labelHeader);
+            this.Controls.Add(this.buttonRegisration);
+            this.Controls.Add(this.panelPassword);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.pictureBoxPassword);
+            this.Controls.Add(this.panelUsername);
+            this.Controls.Add(this.textBoxUsername);
+            this.Controls.Add(this.pictureBoxUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistredForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistredForm";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RegistredForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RegistredForm_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVisible)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,21 +291,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Panel panelPassword;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.PictureBox pictureBoxPassword;
+        private System.Windows.Forms.Panel panelUsername;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.PictureBox pictureBoxUsername;
+        private System.Windows.Forms.Button buttonRegisration;
+        public System.Windows.Forms.Label labelHeader;
+        private System.Windows.Forms.Label labelHasAcc;
+        private System.Windows.Forms.Panel panelSurname;
+        private System.Windows.Forms.TextBox textBoxSurname;
+        private System.Windows.Forms.Panel panelName;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label labelExit;
+        private System.Windows.Forms.TextBox textBoxHiddenSurname;
+        private System.Windows.Forms.TextBox textBoxHiddenName;
+        private System.Windows.Forms.PictureBox pictureBoxVisible;
     }
 }

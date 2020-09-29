@@ -50,108 +50,127 @@ namespace TRPOProject
 
         private void label3_MouseMove(object sender, MouseEventArgs e)
         {
-            label3.BackColor = Color.Red;
+            labelExit.BackColor = Color.Red;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            label3.BackColor = Color.FromArgb(34, 36, 49);
+            labelExit.BackColor = Color.FromArgb(34, 36, 49);
         }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            pictureBox1.Image = Properties.Resources.user_blue;
-            panel1.BackColor = Color.FromArgb(78, 184, 206);
-            textBox1.ForeColor = Color.FromArgb(78, 184, 206);
+            textBoxUsername.Clear();
+            pictureBoxUsername.Image = Properties.Resources.user_blue;
+            panelUsername.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxUsername.ForeColor = Color.FromArgb(78, 184, 206);
 
-            pictureBox2.Image = Properties.Resources.lock_white;
-            panel2.BackColor = Color.White;
-            textBox2.ForeColor = Color.White;
+            pictureBoxPassword.Image = Properties.Resources.lock_white;
+            panelPassword.BackColor = Color.White;
+            textBoxPassword.ForeColor = Color.White;
 
-            panel3.BackColor = Color.White;
-            textBox3.ForeColor = Color.White;
+            panelSurname.BackColor = Color.White;
+            textBoxSurname.ForeColor = Color.White;
 
-            panel4.BackColor = Color.White;
-            textBox4.ForeColor = Color.White;
+            panelName.BackColor = Color.White;
+            textBoxName.ForeColor = Color.White;
         }
 
         private void textBox2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "";
-            pictureBox2.Image = Properties.Resources.lock_blue;
-            panel2.BackColor = Color.FromArgb(78, 184, 206);
-            textBox2.ForeColor = Color.FromArgb(78, 184, 206);
+            textBoxPassword.Text = "";
+            pictureBoxPassword.Image = Properties.Resources.lock_blue;
+            panelPassword.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxPassword.ForeColor = Color.FromArgb(78, 184, 206);
 
-            pictureBox1.Image = Properties.Resources.user_white;
-            panel1.BackColor = Color.White;
-            textBox1.ForeColor = Color.White;
+            pictureBoxUsername.Image = Properties.Resources.user_white;
+            panelUsername.BackColor = Color.White;
+            textBoxUsername.ForeColor = Color.White;
 
-            panel3.BackColor = Color.White;
-            textBox3.ForeColor = Color.White;
+            panelSurname.BackColor = Color.White;
+            textBoxSurname.ForeColor = Color.White;
 
-            panel4.BackColor = Color.White;
-            textBox4.ForeColor = Color.White;
+            panelName.BackColor = Color.White;
+            textBoxName.ForeColor = Color.White;
         }
 
         private void textBox3_Click(object sender, EventArgs e)
         {
-            textBox5.Visible = true;
-            textBox3.Text = "";
-            panel3.BackColor = Color.FromArgb(78, 184, 206);
-            textBox3.ForeColor = Color.FromArgb(78, 184, 206);
+            textBoxHiddenSurname.Visible = true;
+            textBoxSurname.Text = "";
+            panelSurname.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxSurname.ForeColor = Color.FromArgb(78, 184, 206);
 
-            pictureBox1.Image = Properties.Resources.user_white;
-            panel1.BackColor = Color.White;
-            textBox1.ForeColor = Color.White;
+            pictureBoxUsername.Image = Properties.Resources.user_white;
+            panelUsername.BackColor = Color.White;
+            textBoxUsername.ForeColor = Color.White;
 
-            pictureBox2.Image = Properties.Resources.lock_white;
-            panel2.BackColor = Color.White;
-            textBox2.ForeColor = Color.White;
+            pictureBoxPassword.Image = Properties.Resources.lock_white;
+            panelPassword.BackColor = Color.White;
+            textBoxPassword.ForeColor = Color.White;
 
-            panel4.BackColor = Color.White;
-            textBox4.ForeColor = Color.White;
+            panelName.BackColor = Color.White;
+            textBoxName.ForeColor = Color.White;
         }
 
         private void textBox4_Click(object sender, EventArgs e)
         {
-            textBox6.Visible = true;
-            textBox4.Text = "";
-            panel4.BackColor = Color.FromArgb(78, 184, 206);
-            textBox4.ForeColor = Color.FromArgb(78, 184, 206);
+            textBoxHiddenName.Visible = true;
+            textBoxName.Text = "";
+            panelName.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxName.ForeColor = Color.FromArgb(78, 184, 206);
 
-            pictureBox1.Image = Properties.Resources.user_white;
-            panel1.BackColor = Color.White;
-            textBox1.ForeColor = Color.White;
+            pictureBoxUsername.Image = Properties.Resources.user_white;
+            panelUsername.BackColor = Color.White;
+            textBoxUsername.ForeColor = Color.White;
 
-            pictureBox2.Image = Properties.Resources.lock_white;
-            panel2.BackColor = Color.White;
-            textBox2.ForeColor = Color.White;
+            pictureBoxPassword.Image = Properties.Resources.lock_white;
+            panelPassword.BackColor = Color.White;
+            textBoxPassword.ForeColor = Color.White;
 
-            panel3.BackColor = Color.White;
-            textBox3.ForeColor = Color.White;
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            textBox2.PasswordChar = '•';
+            panelSurname.BackColor = Color.White;
+            textBoxSurname.ForeColor = Color.White;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.user_blue;
-            panel1.BackColor = Color.FromArgb(78, 184, 206);
-            textBox1.ForeColor = Color.FromArgb(78, 184, 206);
+            pictureBoxUsername.Image = Properties.Resources.user_blue;
+            panelUsername.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxUsername.ForeColor = Color.FromArgb(78, 184, 206);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBoxUsername.Text == "" || textBoxUsername.Text == "Username")
+            {
+                MessageBox.Show("Введите логин");
+                return;
+            }
+            if (textBoxPassword.Text == "" || textBoxPassword.Text == "Password")
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+            }
+            if (textBoxName.Text == "" || textBoxName.Text == "Name")
+            {
+                MessageBox.Show("Введите имя");
+                return;
+            }
+            if (textBoxSurname.Text == "" || textBoxSurname.Text == "Surname")
+            {
+                MessageBox.Show("Введите фамилию");
+                return;
+            }
+            if (isUserExists())
+                return;
             DB = new SQLiteConnection("Data Source = DataBase.db; Version = 3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "insert into Users(Login, Password) values ( @login, @password )";
-            CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBox1.Text;
-            CMD.Parameters.Add("@password", System.Data.DbType.String).Value = textBox2.Text;
+            CMD.CommandText = "insert into Users(Login, Password, Name, Surname) values ( @login, @password, @name, @surname )";
+            CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
+            CMD.Parameters.Add("@password", System.Data.DbType.String).Value = textBoxPassword.Text;
+            CMD.Parameters.Add("@name", System.Data.DbType.String).Value = textBoxName.Text;
+            CMD.Parameters.Add("@surname", System.Data.DbType.String).Value = textBoxSurname.Text;
             if (CMD.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Регистрация прошла успешно");
@@ -165,5 +184,40 @@ namespace TRPOProject
 
         }
 
+        public bool isUserExists()
+        {
+            DB = new SQLiteConnection("Data Source = DataBase.db; Version = 3");
+            DB.Open();
+            SQLiteCommand CMD = DB.CreateCommand();
+            CMD.CommandText = "select * from Users where Login = @login";
+            CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
+            SQLiteDataReader SQL = CMD.ExecuteReader();
+
+            if (SQL.HasRows)
+            {
+                MessageBox.Show("Логин занят. Пожалуйста, введите другой");
+                DB.Close();
+                return true;
+            }
+            else
+            {
+                DB.Close();
+                return false;
+            }
+        }
+
+        private void pictureBoxVisible_Click(object sender, EventArgs e)
+        {
+            if (textBoxPassword.UseSystemPasswordChar)
+            {
+                pictureBoxVisible.Image = Properties.Resources.visible_blue;
+                textBoxPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                pictureBoxVisible.Image = Properties.Resources.visible_white;
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
