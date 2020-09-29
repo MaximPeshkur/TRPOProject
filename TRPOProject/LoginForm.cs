@@ -116,9 +116,5 @@ namespace TRPOProject
             DB.Close();
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DB.Close();
-        }
     }
 }

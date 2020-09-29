@@ -165,9 +165,5 @@ namespace TRPOProject
 
         }
 
-        private void RegistredForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DB.Close();
-        }
     }
 }

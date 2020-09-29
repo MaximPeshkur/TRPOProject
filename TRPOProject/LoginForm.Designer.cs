@@ -181,7 +181,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -266,7 +266,6 @@
             this.Name = "RegistredForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistredForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistredForm_FormClosing);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RegistredForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RegistredForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
