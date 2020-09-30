@@ -36,7 +36,7 @@ namespace TRPOProject
         private void textBox2_Click(object sender, EventArgs e)
         {
             textBoxPassword.Text = "";
-            textBoxPassword.UseSystemPasswordChar = true;
+            textBoxPassword.PasswordChar = '•';
             pictureBoxPassword.Image = Properties.Resources.lock_blue;
             panelPassword.BackColor = Color.FromArgb(78, 184, 206);
             textBoxPassword.ForeColor = Color.FromArgb(78, 184, 206);
@@ -116,15 +116,15 @@ namespace TRPOProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (textBoxPassword.UseSystemPasswordChar)
+            if (textBoxPassword.PasswordChar == '•')
             {
                 pictureBoxVisible.Image = Properties.Resources.visible_blue;
-                textBoxPassword.UseSystemPasswordChar = false; 
+                textBoxPassword.PasswordChar = '\0';
             }
             else
             {
                 pictureBoxVisible.Image = Properties.Resources.visible_white;
-                textBoxPassword.UseSystemPasswordChar = true;
+                textBoxPassword.PasswordChar = '•';
             }
         }
     }

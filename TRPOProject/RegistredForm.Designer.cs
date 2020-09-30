@@ -244,7 +244,7 @@
             // pictureBoxVisible
             // 
             this.pictureBoxVisible.Image = global::TRPOProject.Properties.Resources.visible_white;
-            this.pictureBoxVisible.Location = new System.Drawing.Point(331, 173);
+            this.pictureBoxVisible.Location = new System.Drawing.Point(331, 171);
             this.pictureBoxVisible.Name = "pictureBoxVisible";
             this.pictureBoxVisible.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

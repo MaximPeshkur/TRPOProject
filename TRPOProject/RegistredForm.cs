@@ -20,12 +20,11 @@ namespace TRPOProject
             InitializeComponent();
         }
 
-        
         private void label3_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        
         private void label2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -79,6 +78,7 @@ namespace TRPOProject
         private void textBox2_Click(object sender, EventArgs e)
         {
             textBoxPassword.Text = "";
+            textBoxPassword.PasswordChar = '•';
             pictureBoxPassword.Image = Properties.Resources.lock_blue;
             panelPassword.BackColor = Color.FromArgb(78, 184, 206);
             textBoxPassword.ForeColor = Color.FromArgb(78, 184, 206);
@@ -208,15 +208,15 @@ namespace TRPOProject
 
         private void pictureBoxVisible_Click(object sender, EventArgs e)
         {
-            if (textBoxPassword.UseSystemPasswordChar)
+            if (textBoxPassword.PasswordChar == '•')
             {
                 pictureBoxVisible.Image = Properties.Resources.visible_blue;
-                textBoxPassword.UseSystemPasswordChar = false;
+                textBoxPassword.PasswordChar = '\0';
             }
             else
             {
                 pictureBoxVisible.Image = Properties.Resources.visible_white;
-                textBoxPassword.UseSystemPasswordChar = true;
+                textBoxPassword.PasswordChar = '•';
             }
         }
     }
