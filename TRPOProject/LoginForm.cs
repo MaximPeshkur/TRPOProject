@@ -23,7 +23,7 @@ namespace TRPOProject
         }
         public static string get_cs()
         {
-            return "Data Source = DESKTOP-6T61F9U\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
+            return "Data Source = DESKTOP-0DL2IAL\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
         }
 
 
@@ -110,7 +110,9 @@ namespace TRPOProject
             SqlDataReader SQL = cmd.ExecuteReader();
             if (SQL.HasRows)
             {
-                MessageBox.Show("Выполнен вход в аккаунт");
+                MainForm mainFrm = new MainForm();
+                this.Hide();
+                mainFrm.Show();
             }
             else
             {
@@ -134,10 +136,9 @@ namespace TRPOProject
             }
         }
 
+        private void panelUsername_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }

@@ -80,6 +80,7 @@
             this.panelUsername.Name = "panelUsername";
             this.panelUsername.Size = new System.Drawing.Size(286, 1);
             this.panelUsername.TabIndex = 3;
+            this.panelUsername.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsername_Paint);
             // 
             // panelPassword
             // 
@@ -175,12 +176,6 @@
             this.pictureBoxUsername.TabIndex = 0;
             this.pictureBoxUsername.TabStop = false;
             // 
-            // timer1
-            // 
-            // 
-            // timer2
-            // 
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +198,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
-           // this.Load += new System.EventHandler(this.LoginForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVisible)).EndInit();
