@@ -45,6 +45,11 @@
             this.pictureBoxPassword = new System.Windows.Forms.PictureBox();
             this.pictureBoxUsername = new System.Windows.Forms.PictureBox();
             this.pictureBoxVisible = new System.Windows.Forms.PictureBox();
+            this.comboBoxPosition = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxKey = new System.Windows.Forms.TextBox();
+            this.panelKey = new System.Windows.Forms.Panel();
+            this.textBoxKeyWrite = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVisible)).BeginInit();
@@ -101,7 +106,7 @@
             this.buttonRegisration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegisration.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegisration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonRegisration.Location = new System.Drawing.Point(69, 368);
+            this.buttonRegisration.Location = new System.Drawing.Point(69, 416);
             this.buttonRegisration.Name = "buttonRegisration";
             this.buttonRegisration.Size = new System.Drawing.Size(286, 45);
             this.buttonRegisration.TabIndex = 13;
@@ -114,7 +119,7 @@
             this.labelHeader.AutoSize = true;
             this.labelHeader.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHeader.ForeColor = System.Drawing.Color.White;
-            this.labelHeader.Location = new System.Drawing.Point(80, 26);
+            this.labelHeader.Location = new System.Drawing.Point(89, 26);
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.Size = new System.Drawing.Size(235, 42);
             this.labelHeader.TabIndex = 14;
@@ -126,7 +131,7 @@
             this.labelHasAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.labelHasAcc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHasAcc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.labelHasAcc.Location = new System.Drawing.Point(153, 426);
+            this.labelHasAcc.Location = new System.Drawing.Point(153, 474);
             this.labelHasAcc.Name = "labelHasAcc";
             this.labelHasAcc.Size = new System.Drawing.Size(112, 15);
             this.labelHasAcc.TabIndex = 15;
@@ -252,12 +257,83 @@
             this.pictureBoxVisible.TabStop = false;
             this.pictureBoxVisible.Click += new System.EventHandler(this.pictureBoxVisible_Click);
             // 
+            // comboBoxPosition
+            // 
+            this.comboBoxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPosition.FormattingEnabled = true;
+            this.comboBoxPosition.Items.AddRange(new object[] {
+            "Администратор",
+            "Работник"});
+            this.comboBoxPosition.Location = new System.Drawing.Point(69, 373);
+            this.comboBoxPosition.Name = "comboBoxPosition";
+            this.comboBoxPosition.Size = new System.Drawing.Size(150, 21);
+            this.comboBoxPosition.TabIndex = 26;
+            this.comboBoxPosition.SelectedIndexChanged += new System.EventHandler(this.comboBoxPosition_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(1, 349);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(92, 18);
+            this.textBox1.TabIndex = 27;
+            this.textBox1.Text = "Должность:";
+            // 
+            // textBoxKey
+            // 
+            this.textBoxKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxKey.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKey.Enabled = false;
+            this.textBoxKey.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxKey.ForeColor = System.Drawing.Color.White;
+            this.textBoxKey.Location = new System.Drawing.Point(222, 349);
+            this.textBoxKey.Name = "textBoxKey";
+            this.textBoxKey.ReadOnly = true;
+            this.textBoxKey.Size = new System.Drawing.Size(68, 18);
+            this.textBoxKey.TabIndex = 28;
+            this.textBoxKey.Text = "Ключ:";
+            this.textBoxKey.Visible = false;
+            // 
+            // panelKey
+            // 
+            this.panelKey.BackColor = System.Drawing.Color.White;
+            this.panelKey.ForeColor = System.Drawing.Color.White;
+            this.panelKey.Location = new System.Drawing.Point(222, 393);
+            this.panelKey.Name = "panelKey";
+            this.panelKey.Size = new System.Drawing.Size(175, 1);
+            this.panelKey.TabIndex = 30;
+            this.panelKey.Visible = false;
+            // 
+            // textBoxKeyWrite
+            // 
+            this.textBoxKeyWrite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxKeyWrite.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKeyWrite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxKeyWrite.ForeColor = System.Drawing.Color.White;
+            this.textBoxKeyWrite.Location = new System.Drawing.Point(222, 373);
+            this.textBoxKeyWrite.Name = "textBoxKeyWrite";
+            this.textBoxKeyWrite.Size = new System.Drawing.Size(133, 18);
+            this.textBoxKeyWrite.TabIndex = 29;
+            this.textBoxKeyWrite.Text = "Ключ";
+            this.textBoxKeyWrite.Visible = false;
+            this.textBoxKeyWrite.Click += new System.EventHandler(this.textBoxKeyWrite_Click);
+            // 
             // RegistredForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(420, 450);
+            this.ClientSize = new System.Drawing.Size(420, 500);
+            this.Controls.Add(this.panelKey);
+            this.Controls.Add(this.textBoxKeyWrite);
+            this.Controls.Add(this.textBoxKey);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxPosition);
             this.Controls.Add(this.pictureBoxVisible);
             this.Controls.Add(this.textBoxHiddenName);
             this.Controls.Add(this.textBoxHiddenSurname);
@@ -308,5 +384,10 @@
         private System.Windows.Forms.TextBox textBoxHiddenSurname;
         private System.Windows.Forms.TextBox textBoxHiddenName;
         private System.Windows.Forms.PictureBox pictureBoxVisible;
+        private System.Windows.Forms.ComboBox comboBoxPosition;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxKey;
+        private System.Windows.Forms.Panel panelKey;
+        private System.Windows.Forms.TextBox textBoxKeyWrite;
     }
 }

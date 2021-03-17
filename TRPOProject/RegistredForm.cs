@@ -8,17 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+using System.Data.SqlClient;
 
 namespace TRPOProject
 {
     public partial class RegistredForm : Form
     {
-        private SQLiteConnection DB;
+        private SqlConnection db;
+
         public RegistredForm()
         {
             InitializeComponent();
+          
         }
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -141,6 +144,7 @@ namespace TRPOProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             if (textBoxUsername.Text == "" || textBoxUsername.Text == "Username")
             {
                 MessageBox.Show("Введите логин");
@@ -161,17 +165,30 @@ namespace TRPOProject
                 MessageBox.Show("Введите фамилию");
                 return;
             }
+            if (comboBoxPosition.SelectedIndex != 0 && comboBoxPosition.SelectedIndex !=1)
+            {
+                MessageBox.Show("Выберите должность");
+                return;
+            }
+            if (comboBoxPosition.SelectedIndex == 0 && textBoxKeyWrite.Text != "Admin")
+            {
+                MessageBox.Show("Неверный ключ администратора");
+                return;
+            }
+            
             if (isUserExists())
                 return;
-            DB = new SQLiteConnection("Data Source = DataBase.db; Version = 3");
-            DB.Open();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "insert into Users(Login, Password, Name, Surname) values ( @login, @password, @name, @surname )";
-            CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
-            CMD.Parameters.Add("@password", System.Data.DbType.String).Value = textBoxPassword.Text;
-            CMD.Parameters.Add("@name", System.Data.DbType.String).Value = textBoxName.Text;
-            CMD.Parameters.Add("@surname", System.Data.DbType.String).Value = textBoxSurname.Text;
-            if (CMD.ExecuteNonQuery() == 1)
+            
+            db = new SqlConnection(LoginForm.get_cs());
+            db.Open();
+            SqlCommand cmd = db.CreateCommand();
+            cmd.CommandText = "insert into worker(worker_login, worker_password, worker_name, worker_surname, worker_position_id) values ( @login, @password, @name, @surname, @position )";
+            cmd.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
+            cmd.Parameters.Add("@password", System.Data.DbType.String).Value = textBoxPassword.Text;
+            cmd.Parameters.Add("@name", System.Data.DbType.String).Value = textBoxName.Text;
+            cmd.Parameters.Add("@surname", System.Data.DbType.String).Value = textBoxSurname.Text;
+            cmd.Parameters.Add("@position", System.Data.DbType.Int32).Value = (comboBoxPosition.SelectedIndex + 1);           
+            if (cmd.ExecuteNonQuery()==1)
             {
                 MessageBox.Show("Регистрация прошла успешно");
             }
@@ -179,29 +196,27 @@ namespace TRPOProject
             {
                 MessageBox.Show("Ошибка при регистрации");
             }
-
-            DB.Close();
-
+            db.Close();
         }
 
         public bool isUserExists()
         {
-            DB = new SQLiteConnection("Data Source = DataBase.db; Version = 3");
-            DB.Open();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "select * from Users where Login = @login";
+            db = new SqlConnection(LoginForm.get_cs());
+            db.Open(); 
+            SqlCommand CMD = db.CreateCommand();
+            CMD.CommandText = "select * from worker where worker_login = @login";
             CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
-            SQLiteDataReader SQL = CMD.ExecuteReader();
+            SqlDataReader SQL = CMD.ExecuteReader();
 
             if (SQL.HasRows)
             {
                 MessageBox.Show("Логин занят. Пожалуйста, введите другой");
-                DB.Close();
+                db.Close();
                 return true;
             }
             else
             {
-                DB.Close();
+                db.Close();
                 return false;
             }
         }
@@ -218,6 +233,45 @@ namespace TRPOProject
                 pictureBoxVisible.Image = Properties.Resources.visible_white;
                 textBoxPassword.PasswordChar = '•';
             }
+        }
+
+        private void comboBoxPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxPosition.SelectedIndex == 0)
+            {
+                textBoxKey.Visible = true;
+                panelKey.Visible = true;
+                textBoxKeyWrite.Visible = true;
+            }
+            else
+            {
+                textBoxKey.Visible = false;
+                panelKey.Visible = false;
+                textBoxKeyWrite.Visible = false;
+            }
+             
+            
+        }
+
+        private void textBoxKeyWrite_Click(object sender, EventArgs e)
+        {
+            textBoxKeyWrite.Text = "";
+            panelKey.BackColor = Color.FromArgb(78, 184, 206);
+            textBoxKeyWrite.ForeColor = Color.FromArgb(78, 184, 206);
+
+            panelSurname.BackColor = Color.White;
+            textBoxSurname.ForeColor = Color.White;
+
+            pictureBoxUsername.Image = Properties.Resources.user_white;
+            panelUsername.BackColor = Color.White;
+            textBoxUsername.ForeColor = Color.White;
+
+            pictureBoxPassword.Image = Properties.Resources.lock_white;
+            panelPassword.BackColor = Color.White;
+            textBoxPassword.ForeColor = Color.White;
+
+            panelName.BackColor = Color.White;
+            textBoxName.ForeColor = Color.White;
         }
     }
 }

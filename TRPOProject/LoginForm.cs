@@ -8,16 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Data.SqlClient;
 
 namespace TRPOProject
 {
     public partial class LoginForm : Form
     {
-        private SQLiteConnection DB;
-
+        //private SQLiteConnection DB;
+        private SqlConnection db;
+        //static RegistredForm frm2 = new RegistredForm();
         public LoginForm()
         {
             InitializeComponent();
+        }
+        public static string get_cs()
+        {
+            return "Data Source = DESKTOP-6T61F9U\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
         }
 
 
@@ -94,14 +100,14 @@ namespace TRPOProject
         {
 
 
-            DB = new SQLiteConnection("Data Source = DataBase.db; Version = 3");
-            DB.Open();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "select * from Users where Login = @login and Password = @password";
-            CMD.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
-            CMD.Parameters.Add("@password", System.Data.DbType.String).Value = textBoxPassword.Text;
-            SQLiteDataReader SQL = CMD.ExecuteReader();
 
+            db = new SqlConnection(get_cs());
+            db.Open();
+            SqlCommand cmd = db.CreateCommand();
+            cmd.CommandText = "select * from worker where worker_login = @login and worker_password = @password";
+            cmd.Parameters.Add("@login", System.Data.DbType.String).Value = textBoxUsername.Text;
+            cmd.Parameters.Add("@password", System.Data.DbType.String).Value = textBoxPassword.Text;
+            SqlDataReader SQL = cmd.ExecuteReader();
             if (SQL.HasRows)
             {
                 MessageBox.Show("Выполнен вход в аккаунт");
@@ -110,8 +116,8 @@ namespace TRPOProject
             {
                 MessageBox.Show("Неверный логин или пароль");
             }
-           
-            DB.Close();
+            db.Close();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -127,5 +133,11 @@ namespace TRPOProject
                 textBoxPassword.PasswordChar = '•';
             }
         }
+
+
+
+
+
+
     }
 }
