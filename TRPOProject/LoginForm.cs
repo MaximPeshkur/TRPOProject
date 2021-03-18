@@ -23,7 +23,7 @@ namespace TRPOProject
         }
         public static string get_cs()
         {
-            return "Data Source = DESKTOP-0DL2IAL\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
+            return "Data Source =DESKTOP-6T61F9U\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
         }
 
 
@@ -136,9 +136,25 @@ namespace TRPOProject
             }
         }
 
-        private void panelUsername_Paint(object sender, PaintEventArgs e)
-        {
 
+
+
+        private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox2_Click(sender, e);
+                textBoxPassword.Focus();
+                textBoxPassword.SelectionStart = textBoxPassword.Text.Length;
+            }
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e); 
+            }
         }
     }
 }

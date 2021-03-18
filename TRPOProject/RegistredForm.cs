@@ -191,6 +191,9 @@ namespace TRPOProject
             if (cmd.ExecuteNonQuery()==1)
             {
                 MessageBox.Show("Регистрация прошла успешно");
+                MainForm mainForm = new MainForm();
+                this.Hide();
+                mainForm.Show();
             }
             else
             {
@@ -242,6 +245,8 @@ namespace TRPOProject
                 textBoxKey.Visible = true;
                 panelKey.Visible = true;
                 textBoxKeyWrite.Visible = true;
+                textBoxKeyWrite.Focus();
+                textBoxKeyWrite.SelectionStart = 0;
             }
             else
             {
@@ -272,6 +277,71 @@ namespace TRPOProject
 
             panelName.BackColor = Color.White;
             textBoxName.ForeColor = Color.White;
+        }
+
+        private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox2_Click(sender,e);
+                textBoxPassword.Focus();
+                textBoxPassword.SelectionStart = textBoxName.Text.Length;
+            }
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox4_Click(sender, e);
+                textBoxName.Focus();
+                textBoxName.SelectionStart = textBoxName.Text.Length;
+            }
+        }
+
+        private void textBoxSurname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                panelSurname.BackColor = Color.White;
+                textBoxSurname.ForeColor = Color.White;
+                comboBoxPosition.Focus();
+            }
+        }
+
+
+        private void textBoxName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox3_Click(sender, e);
+                textBoxSurname.Focus();
+                textBoxSurname.SelectionStart = textBoxName.Text.Length; 
+            }
+        }
+
+        private void textBoxKeyWrite_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
+
+        private void comboBoxPosition_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxPassword.Image = Properties.Resources.lock_white;
+            panelPassword.BackColor = Color.White;
+            textBoxPassword.ForeColor = Color.White;
+
+            panelSurname.BackColor = Color.White;
+            textBoxSurname.ForeColor = Color.White;
+
+            panelName.BackColor = Color.White;
+            textBoxName.ForeColor = Color.White;
+            pictureBoxUsername.Image = Properties.Resources.user_white;
+            panelUsername.BackColor = Color.White;
+            textBoxUsername.ForeColor = Color.White;
         }
     }
 }

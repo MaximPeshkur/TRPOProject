@@ -76,6 +76,7 @@
             this.textBoxPassword.TabIndex = 11;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             // 
             // panelUsername
             // 
@@ -99,6 +100,7 @@
             this.textBoxUsername.Text = "Username";
             this.textBoxUsername.Click += new System.EventHandler(this.textBox1_Click);
             this.textBoxUsername.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
             // buttonRegisration
             // 
@@ -159,6 +161,7 @@
             this.textBoxSurname.TabIndex = 20;
             this.textBoxSurname.Text = "Surname";
             this.textBoxSurname.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBoxSurname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSurname_KeyDown);
             // 
             // panelName
             // 
@@ -181,6 +184,7 @@
             this.textBoxName.TabIndex = 17;
             this.textBoxName.Text = "Name";
             this.textBoxName.Click += new System.EventHandler(this.textBox4_Click);
+            this.textBoxName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxName_KeyDown);
             // 
             // labelExit
             // 
@@ -260,15 +264,17 @@
             // comboBoxPosition
             // 
             this.comboBoxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPosition.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxPosition.FormattingEnabled = true;
             this.comboBoxPosition.Items.AddRange(new object[] {
             "Администратор",
             "Работник"});
             this.comboBoxPosition.Location = new System.Drawing.Point(69, 373);
             this.comboBoxPosition.Name = "comboBoxPosition";
-            this.comboBoxPosition.Size = new System.Drawing.Size(150, 21);
+            this.comboBoxPosition.Size = new System.Drawing.Size(150, 24);
             this.comboBoxPosition.TabIndex = 26;
             this.comboBoxPosition.SelectedIndexChanged += new System.EventHandler(this.comboBoxPosition_SelectedIndexChanged);
+            this.comboBoxPosition.MouseEnter += new System.EventHandler(this.comboBoxPosition_MouseEnter);
             // 
             // textBox1
             // 
@@ -303,7 +309,7 @@
             // 
             this.panelKey.BackColor = System.Drawing.Color.White;
             this.panelKey.ForeColor = System.Drawing.Color.White;
-            this.panelKey.Location = new System.Drawing.Point(222, 393);
+            this.panelKey.Location = new System.Drawing.Point(222, 395);
             this.panelKey.Name = "panelKey";
             this.panelKey.Size = new System.Drawing.Size(175, 1);
             this.panelKey.TabIndex = 30;
@@ -315,13 +321,14 @@
             this.textBoxKeyWrite.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxKeyWrite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxKeyWrite.ForeColor = System.Drawing.Color.White;
-            this.textBoxKeyWrite.Location = new System.Drawing.Point(222, 373);
+            this.textBoxKeyWrite.Location = new System.Drawing.Point(222, 375);
             this.textBoxKeyWrite.Name = "textBoxKeyWrite";
             this.textBoxKeyWrite.Size = new System.Drawing.Size(133, 18);
             this.textBoxKeyWrite.TabIndex = 29;
             this.textBoxKeyWrite.Text = "Ключ";
             this.textBoxKeyWrite.Visible = false;
             this.textBoxKeyWrite.Click += new System.EventHandler(this.textBoxKeyWrite_Click);
+            this.textBoxKeyWrite.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxKeyWrite_KeyDown);
             // 
             // RegistredForm
             // 
@@ -389,5 +396,6 @@
         private System.Windows.Forms.TextBox textBoxKey;
         private System.Windows.Forms.Panel panelKey;
         private System.Windows.Forms.TextBox textBoxKeyWrite;
+        
     }
 }

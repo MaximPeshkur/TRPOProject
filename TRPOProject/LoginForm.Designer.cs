@@ -71,6 +71,7 @@
             this.textBoxUsername.Text = "Username";
             this.textBoxUsername.Click += new System.EventHandler(this.textBox1_Click);
             this.textBoxUsername.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
             // panelUsername
             // 
@@ -80,7 +81,6 @@
             this.panelUsername.Name = "panelUsername";
             this.panelUsername.Size = new System.Drawing.Size(286, 1);
             this.panelUsername.TabIndex = 3;
-            this.panelUsername.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsername_Paint);
             // 
             // panelPassword
             // 
@@ -103,6 +103,7 @@
             this.textBoxPassword.TabIndex = 5;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             // 
             // buttonLogIn
             // 
