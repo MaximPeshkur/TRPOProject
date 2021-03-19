@@ -14,9 +14,7 @@ namespace TRPOProject
 {
     public partial class LoginForm : Form
     {
-        //private SQLiteConnection DB;
         private SqlConnection db;
-        //static RegistredForm frm2 = new RegistredForm();
         public LoginForm()
         {
             InitializeComponent();
