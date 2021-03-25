@@ -51,7 +51,7 @@ namespace TRPOProject
         private void buttonRegisration_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            string sql = $"select  order_date, product_name, ordered_product_count, product_price, order_cost from[order] inner join ordered_product on order_id = ordered_product_order_id inner join product on product_id = ordered_product_product_id where(order_id= {Convert.ToInt32(textBoxNumber.Text)})";
+            string sql = $"select  order_date, product_name, ordered_product_count, product_price, order_cost from [order] inner join ordered_product on order_id = ordered_product_order_id inner join product on product_id = ordered_product_product_id where(order_id= {Convert.ToInt32(textBoxNumber.Text)})";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AllowUserToAddRows = false;
             SqlConnection connection = new SqlConnection(LoginForm.get_cs());

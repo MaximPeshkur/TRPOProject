@@ -15,13 +15,14 @@ namespace TRPOProject
     public partial class LoginForm : Form
     {
         private SqlConnection db;
+        public static bool isAdmin = false;
         public LoginForm()
         {
             InitializeComponent();
         }
         public static string get_cs()
         {
-            return "Data Source =DESKTOP-6T61F9U\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
+            return "Data Source = DESKTOP-0DL2IAL\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
         }
 
 
@@ -108,6 +109,10 @@ namespace TRPOProject
             SqlDataReader SQL = cmd.ExecuteReader();
             if (SQL.HasRows)
             {
+                while (SQL.Read())
+                {
+                    isAdmin = Convert.ToInt32(SQL.GetValue(4)) == 1;
+                }
                 MainForm mainFrm = new MainForm();
                 this.Hide();
                 mainFrm.Show();
@@ -116,6 +121,7 @@ namespace TRPOProject
             {
                 MessageBox.Show("Неверный логин или пароль");
             }
+            
             db.Close();
 
         }

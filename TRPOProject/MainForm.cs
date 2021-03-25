@@ -104,5 +104,20 @@ namespace TRPOProject
             GetInfoForm getInfoForm = new GetInfoForm();
             getInfoForm.Show();
         }
+
+        private void Statisticsbutton_Click(object sender, EventArgs e)
+        {
+
+            if (LoginForm.isAdmin)
+            {
+                Close();
+                StatisticForm statisticForm = new StatisticForm();
+                statisticForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("У вас недостаточно прав!");
+            }
+        }
     }
 }
