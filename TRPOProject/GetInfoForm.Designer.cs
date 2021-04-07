@@ -35,13 +35,13 @@ namespace TRPOProject
             this.textBoxNumber = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pIMShopDataSet = new TRPOProject.PIMShopDataSet();
-            this.pIMShopDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.all_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pIMShopDataSet = new TRPOProject.PIMShopDataSet();
+            this.pIMShopDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonRegisration = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pIMShopDataSet)).BeginInit();
@@ -113,16 +113,7 @@ namespace TRPOProject
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 150);
             this.dataGridView1.TabIndex = 28;
-            // 
-            // pIMShopDataSet
-            // 
-            this.pIMShopDataSet.DataSetName = "PIMShopDataSet";
-            this.pIMShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pIMShopDataSetBindingSource
-            // 
-            this.pIMShopDataSetBindingSource.DataSource = this.pIMShopDataSet;
-            this.pIMShopDataSetBindingSource.Position = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // order_date
             // 
@@ -154,6 +145,16 @@ namespace TRPOProject
             this.all_cost.Name = "all_cost";
             this.all_cost.ReadOnly = true;
             // 
+            // pIMShopDataSet
+            // 
+            this.pIMShopDataSet.DataSetName = "PIMShopDataSet";
+            this.pIMShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pIMShopDataSetBindingSource
+            // 
+            this.pIMShopDataSetBindingSource.DataSource = this.pIMShopDataSet;
+            this.pIMShopDataSetBindingSource.Position = 0;
+            // 
             // buttonRegisration
             // 
             this.buttonRegisration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -184,6 +185,7 @@ namespace TRPOProject
             this.Name = "GetInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GetInfoForm";
+            this.Load += new System.EventHandler(this.GetInfoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pIMShopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pIMShopDataSetBindingSource)).EndInit();

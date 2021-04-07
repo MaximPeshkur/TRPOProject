@@ -6,6 +6,16 @@ using System.Windows.Forms;
 
 namespace TRPOProject
 {
+    static class Global
+    {
+        private static int _globalVar = 0;
+
+        public static int GlobalVar
+        {
+            get { return _globalVar; }
+            set { _globalVar = value; }
+        }
+    }
     static class Program
     {
         /// <summary>
@@ -17,6 +27,7 @@ namespace TRPOProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
+            
         }
     }
 }

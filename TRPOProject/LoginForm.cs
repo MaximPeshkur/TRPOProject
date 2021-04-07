@@ -12,6 +12,8 @@ using System.Data.SqlClient;
 
 namespace TRPOProject
 {
+
+    
     public partial class LoginForm : Form
     {
         private SqlConnection db;
@@ -21,7 +23,7 @@ namespace TRPOProject
         }
         public static string get_cs()
         {
-            return "Data Source =DESKTOP-6T61F9U\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
+            return "Data Source =DESKTOP-PQB94ID\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
         }
 
 
@@ -93,11 +95,9 @@ namespace TRPOProject
             panelUsername.BackColor = Color.FromArgb(78, 184, 206);
             textBoxUsername.ForeColor = Color.FromArgb(78, 184, 206);
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-
-
 
             db = new SqlConnection(get_cs());
             db.Open();
@@ -108,9 +108,21 @@ namespace TRPOProject
             SqlDataReader SQL = cmd.ExecuteReader();
             if (SQL.HasRows)
             {
+                
                 MainForm mainFrm = new MainForm();
                 this.Hide();
                 mainFrm.Show();
+                SQL.Close();
+                using (SqlCommand seccommand = new SqlCommand($"select worker_id from worker where (worker_login='{textBoxUsername.Text}' and worker_password='{textBoxPassword.Text}')", db))
+                {
+                    SqlDataReader secreader = seccommand.ExecuteReader();
+                    while (secreader.Read())
+                    {
+                        Global.GlobalVar = int.Parse(secreader["worker_id"].ToString());
+                    }
+
+                }
+                
             }
             else
             {

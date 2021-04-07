@@ -66,6 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrderForm.Designer.cs">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteOrderForm.Designer.cs">
+      <DependentUpon>DeleteOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +109,12 @@
     <Compile Include="RegistredForm.Designer.cs">
       <DependentUpon>RegistredForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOrderForm.resx">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteOrderForm.resx">
+      <DependentUpon>DeleteOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GetInfoForm.resx">
       <DependentUpon>GetInfoForm.cs</DependentUpon>
     </EmbeddedResource>

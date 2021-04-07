@@ -62,6 +62,7 @@ namespace TRPOProject
             this.AddRecbutton.TabIndex = 24;
             this.AddRecbutton.Text = "ДОБАВИТЬ ЗАКАЗ";
             this.AddRecbutton.UseVisualStyleBackColor = false;
+            this.AddRecbutton.Click += new System.EventHandler(this.AddRecbutton_Click_1);
             this.AddRecbutton.MouseLeave += new System.EventHandler(this.AddRecbutton_MouseLeave);
             this.AddRecbutton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AddRecbutton_MouseMove);
             // 
@@ -108,6 +109,7 @@ namespace TRPOProject
             this.DeleteRecbutton.TabIndex = 27;
             this.DeleteRecbutton.Text = "УДАЛИТЬ ЗАКАЗ";
             this.DeleteRecbutton.UseVisualStyleBackColor = false;
+            this.DeleteRecbutton.Click += new System.EventHandler(this.DeleteRecbutton_Click);
             this.DeleteRecbutton.MouseLeave += new System.EventHandler(this.DeleteRecbutton_MouseLeave);
             this.DeleteRecbutton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DeleteRecbutton_MouseMove);
             // 

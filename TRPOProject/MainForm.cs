@@ -104,5 +104,20 @@ namespace TRPOProject
             GetInfoForm getInfoForm = new GetInfoForm();
             getInfoForm.Show();
         }
+
+
+        private void AddRecbutton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddOrderForm addOrderform = new AddOrderForm();
+            addOrderform.Show();
+        }
+
+        private void DeleteRecbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DeleteOrderForm del = new DeleteOrderForm();
+            del.Show();
+        }
     }
 }
