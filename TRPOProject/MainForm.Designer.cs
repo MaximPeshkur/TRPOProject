@@ -78,6 +78,7 @@ namespace TRPOProject
             this.Statisticsbutton.TabIndex = 25;
             this.Statisticsbutton.Text = "СТАТИСТИКА";
             this.Statisticsbutton.UseVisualStyleBackColor = false;
+            this.Statisticsbutton.Click += new System.EventHandler(this.Statisticsbutton_Click);
             this.Statisticsbutton.MouseLeave += new System.EventHandler(this.Statisticsbutton_MouseLeave);
             this.Statisticsbutton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Statisticsbutton_MouseMove);
             // 

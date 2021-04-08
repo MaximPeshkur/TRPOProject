@@ -17,6 +17,7 @@ namespace TRPOProject
     public partial class LoginForm : Form
     {
         private SqlConnection db;
+        public static bool isAdmin = false;
         public LoginForm()
         {
             InitializeComponent();
@@ -109,6 +110,10 @@ namespace TRPOProject
             if (SQL.HasRows)
             {
                 
+                while (SQL.Read())
+                {
+                    isAdmin = Convert.ToInt32(SQL.GetValue(4)) == 1;
+                }
                 MainForm mainFrm = new MainForm();
                 this.Hide();
                 mainFrm.Show();
@@ -128,6 +133,7 @@ namespace TRPOProject
             {
                 MessageBox.Show("Неверный логин или пароль");
             }
+            
             db.Close();
 
         }
