@@ -34,67 +34,75 @@ namespace TRPOProject
 
         private void buttonRegisration_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            try
             {
-                if (dataGridView1[2, i].Value == null)
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    MessageBox.Show("Количество должно быть заполнено");
-                }
-                else if (Convert.ToInt32(dataGridView1[2, i].Value.ToString()) > 100)
-                {
-                    MessageBox.Show("Нельзя в одной ячейке указывать количество больше 100");
-                }
-                else if (Convert.ToInt32(dataGridView1[2, i].Value.ToString()) == 0)
-                {
-                    MessageBox.Show("Значение не может быть нулевое!");
-                }
-                else
-                {
-                    SqlConnection db;
-                    db = new SqlConnection(LoginForm.get_cs());
-                    db.Open();
-                    SqlCommand cmd = db.CreateCommand();
-                    cmd.CommandText = "insert into [order]([order_cost], [order_date], [order_worker_id]) values (@cost, @date, @workerid)";
-                    cmd.Parameters.Add("@cost", System.Data.DbType.String).Value = textBox1.Text;
-                    cmd.Parameters.Add("@date", System.Data.DbType.String).Value = DateTime.Now;
-                    cmd.Parameters.Add("@workerid", System.Data.DbType.String).Value = Global.GlobalVar;
-                    if (cmd.ExecuteNonQuery() == 1)
+                    if (dataGridView1[2, i].Value == null)
                     {
-                        MessageBox.Show("Заказ добавлен!");
-                        MainForm mainForm = new MainForm();
-                        string com = "select top 1 order_id from [order] order by order_id desc";
-                        int ID = 0;
-                        SqlCommand command = new SqlCommand(com, db);
-                        SqlDataReader reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            ID = Convert.ToInt32(reader[0].ToString());
-                        }
-                        reader.Close();
-                        int ProductID = 0;
-                        int ProductCount = 0;
-                        string com1 = "select product_id from [product] where product_name='" + dataGridView1[0, i].Value.ToString() + "'";
-                        SqlCommand command1 = new SqlCommand(com1, db);
-                        SqlDataReader reader1 = command1.ExecuteReader();
-                        while (reader1.Read())
-                        {
-                            ProductID = Convert.ToInt32(reader1[0].ToString());
-                            ProductCount = Convert.ToInt32(dataGridView1[2, i].Value.ToString());
-                        }
-                        reader1.Close();
-                        cmd.CommandText = $"insert into [ordered_product]([ordered_product_count], [ordered_product_product_id], [ordered_product_order_id]) values ({ProductCount}, {ProductID}, {ID})";
-                        cmd.ExecuteNonQuery();
-
-                        this.Hide();
-                        mainForm.Show();
+                        MessageBox.Show("Количество должно быть заполнено");
+                    }
+                    else if (Convert.ToInt32(dataGridView1[2, i].Value.ToString()) > 100)
+                    {
+                        MessageBox.Show("Нельзя в одной ячейке указывать количество больше 100");
+                    }
+                    else if (Convert.ToInt32(dataGridView1[2, i].Value.ToString()) == 0 || Convert.ToInt32(dataGridView1[2, i].Value.ToString()) < 0)
+                    {
+                        MessageBox.Show("Значение не может быть нулевое!");
                     }
                     else
                     {
+                        SqlConnection db;
+                        db = new SqlConnection(LoginForm.get_cs());
+                        db.Open();
+                        SqlCommand cmd = db.CreateCommand();
+                        cmd.CommandText = "insert into [order]([order_cost], [order_date], [order_worker_id]) values (@cost, @date, @workerid)";
+                        cmd.Parameters.Add("@cost", System.Data.DbType.String).Value = textBox1.Text;
+                        cmd.Parameters.Add("@date", System.Data.DbType.String).Value = DateTime.Now;
+                        cmd.Parameters.Add("@workerid", System.Data.DbType.String).Value = Global.GlobalVar;
+                        if (cmd.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("Заказ добавлен!");
+                            MainForm mainForm = new MainForm();
+                            string com = "select top 1 order_id from [order] order by order_id desc";
+                            int ID = 0;
+                            SqlCommand command = new SqlCommand(com, db);
+                            SqlDataReader reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                ID = Convert.ToInt32(reader[0].ToString());
+                            }
+                            reader.Close();
+                            int ProductID = 0;
+                            int ProductCount = 0;
+                            string com1 = "select product_id from [product] where product_name='" + dataGridView1[0, i].Value.ToString() + "'";
+                            SqlCommand command1 = new SqlCommand(com1, db);
+                            SqlDataReader reader1 = command1.ExecuteReader();
+                            while (reader1.Read())
+                            {
+                                ProductID = Convert.ToInt32(reader1[0].ToString());
+                                ProductCount = Convert.ToInt32(dataGridView1[2, i].Value.ToString());
+                            }
+                            reader1.Close();
+                            cmd.CommandText = $"insert into [ordered_product]([ordered_product_count], [ordered_product_product_id], [ordered_product_order_id]) values ({ProductCount}, {ProductID}, {ID})";
+                            cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Ошибка добавления!");
+                            this.Hide();
+                            mainForm.Show();
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Ошибка добавления!");
+                        }
+                        db.Close();
                     }
-                    db.Close();
                 }
+            }
+            catch
+            {
+                Console.WriteLine("Исключение!!!");
+                MessageBox.Show("Вводимое вами число является недопустимым!");
             }
 
         }
