@@ -44,6 +44,10 @@ namespace TRPOProject
                 {
                     MessageBox.Show("Нельзя в одной ячейке указывать количество больше 100");
                 }
+                else if (Convert.ToInt32(dataGridView1[2, i].Value.ToString()) == 0)
+                {
+                    MessageBox.Show("Значение не может быть нулевое!");
+                }
                 else
                 {
                     SqlConnection db;
