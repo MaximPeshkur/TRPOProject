@@ -94,7 +94,8 @@ namespace TRPOProject
                     }
                 }
             }
-
+            db.Close();
+            reader.Close();
             return data;
         }
 
@@ -120,7 +121,8 @@ namespace TRPOProject
             {
                 MessageBox.Show("Нет записей");
             }
-
+            reader.Close();
+            db.Close();
             return id;
         }
 
@@ -216,7 +218,8 @@ namespace TRPOProject
             {
                 MessageBox.Show("Нет записей");
             }
-
+            db.Close();
+            reader.Close();
             return date;
         }
     }

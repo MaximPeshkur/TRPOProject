@@ -24,7 +24,7 @@ namespace TRPOProject
         }
         public static string get_cs()
         {
-            return "Data Source =DESKTOP-PQB94ID\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
+            return "Data Source =DESKTOP-6T61F9U\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
         }
 
 

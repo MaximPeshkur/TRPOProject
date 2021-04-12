@@ -18,7 +18,7 @@ namespace TRPOProject
         {
             InitializeComponent();
             string sql = $"select product_name from product";
-            SqlConnection db = new SqlConnection(AddOrderForm.get_cs());
+            SqlConnection db = new SqlConnection(LoginForm.get_cs());
             db.Open();
             SqlCommand command = new SqlCommand(sql, db);
             SqlDataReader reader = command.ExecuteReader();
@@ -29,16 +29,13 @@ namespace TRPOProject
             reader.Close();
             db.Close();
         }
+        
 
-        public static string get_cs()
-        {
-            return "Data Source =DESKTOP-PQB94ID\\SQLEXPRESS; Initial Catalog = PIMShop; User ID = sa; Password = 123456789";
-        }
 
         private void buttonRegisration_Click(object sender, EventArgs e)
         {
             SqlConnection db;
-            db = new SqlConnection(AddOrderForm.get_cs());
+            db = new SqlConnection(LoginForm.get_cs());
             db.Open();
             SqlCommand cmd = db.CreateCommand();
             cmd.CommandText = "insert into [order]([order_cost], [order_date], [order_worker_id]) values (@cost, @date, @workerid)";
